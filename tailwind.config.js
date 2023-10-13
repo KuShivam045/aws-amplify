@@ -1,43 +1,18 @@
 /** @type {import('tailwindcss').Config} */
-const defaultTheme = require('tailwindcss/defaultTheme')
-
-
 module.exports = {
-  i18n: {
-    locales: ["en"],
-    defaultLocale: "en"
-  },
   content: [
-    "./app/**/*.{js,ts,jsx,tsx}",
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
+    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
-
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        colors: {
-          'lighta': '#D3D3D3',
-          'yellow': "#f8f6ef"
-        },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
-      // animation: {
-      //   'animate-spin': 'spin 1s linear infinite',
-      // },
-      // keyframes: {
-      //   'animate-spin': {
-      //     '0%, 100%': { transform: 'rotate(0deg)' },
-      //     '50%': { transform: 'rotate(3deg)' },
-      //   }
-      // }
     },
   },
-  
-  plugins: [
-    // ...
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/aspect-ratio'),
-    require('@tailwindcss/typography')
-  ],
+  plugins: [],
 }
